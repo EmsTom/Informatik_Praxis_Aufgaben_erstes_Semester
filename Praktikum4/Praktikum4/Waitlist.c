@@ -50,6 +50,7 @@ int dequeue(struct Knoten * schlange)
     if (!first)
         return -1;
     int value = first->key;
+    printf("\nDer Eintrag mit dem Wert %d wurde aus der Warteschlange entfernt.\n", value);
     //erstes element aus der verkettung entfernen
     schlange->next = first->next;
     free(first);
