@@ -1,0 +1,8 @@
+//
+// Created by tvolm on 02.01.2026.
+//
+
+#ifndef PRAKTIKUM5_ACHTDAMEN_H
+#define PRAKTIKUM5_ACHTDAMEN_H
+
+#endif //PRAKTIKUM5_ACHTDAMEN_H
