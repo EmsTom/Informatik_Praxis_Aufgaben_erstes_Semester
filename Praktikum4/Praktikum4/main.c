@@ -15,7 +15,8 @@ int main(void)
         printf("1. Anfuegen eines Elementes\n");
         printf("2. Loeschen und Ausgeben des ersten Elementes\n");
         printf("3. Ausgeben der Warteschlange\n");
-        printf("4. Beenden des Programms\n");
+        printf("4. Ausgeben der Anzahl der Elemente der Warteschlange\n");
+        printf("5. Beenden des Programms\n");
         printf("Bitte geben Sie die Ziffer der gewuenschten Funktion ein: ");
 
 
@@ -46,16 +47,15 @@ int main(void)
                 printQueue(q);
                 break;
             case 4:
+                printf("\nEs sind %d Elemente der in der Warteschlange\n", queueCounter(q));
+                break;
+            case 5:
                 destroyQueue(q);
                 break;
             default:
                 break;
         }
-    } while (choice != 4);
+    } while (choice != 5);
 
-
-
-
-    printf("Hello, World!\n");
     return 0;
 }

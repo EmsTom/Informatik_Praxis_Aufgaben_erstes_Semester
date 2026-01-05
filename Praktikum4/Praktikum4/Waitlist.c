@@ -15,12 +15,14 @@ struct Knoten * qinit(void)
 
     q->key = 0;
     q->next = NULL;
+    return q;
 }
 //Findet den letzten Teil der Schlange (tail)
 static struct Knoten *find_tail(struct Knoten *schlange)
 {
     struct Knoten *p = schlange;
     while (p->next != NULL) p = p->next;
+    //for (struct Knoten *p = schlange; p->next != NULL; p = p->next);
     return p;
 }
 // Anfügen eines Elementes an die Warteschlange
@@ -61,16 +63,22 @@ int isempty(struct Knoten * schlange)
 {
     if (!schlange)
         return 1;
-    return(schlange->next == NULL) ? 1 : 0;
+    return(schlange->next == NULL);//? 1 : 0;
 
 }
 // Ausgabe der in der Schlange gespeicherten Elemente.
 void printQueue (struct Knoten * schlange)
 {
-    isempty(schlange);
+
+    if (isempty(schlange)) {
+        printf("\n<leer>\n");
+        return;
+    }
+
 
     struct Knoten *p = schlange->next;
     printf("\n");
+
     while (p != NULL)
     {
         printf("%d;", p->key);
@@ -92,7 +100,19 @@ void destroyQueue(struct Knoten * schlange)
     }
     free(schlange);
 }
-
+int queueCounter(struct Knoten * schlange)
+{
+    if (!schlange)
+        return 0;
+    struct Knoten * p = schlange->next;
+    int counter = 0;
+    while (p != NULL )
+    {
+        counter++;
+        p = p->next;
+    }
+    return counter;
+}
 //
 // Created by tvolm on 01.12.2025.
 //
